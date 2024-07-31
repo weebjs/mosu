@@ -1,14 +1,22 @@
 <script lang="ts">
-	import 'iconify-icon'  
+	import 'iconify-icon';
+	import { Avatar } from '@skeletonlabs/skeleton';
 </script>
 
 <div class="text-center mt-[7rem]">
-	<p class="h1 inter">AniVault</p>
-	<p class="inline-center mt-4">
-		Welcome to AniVault! This is a web service <br />  that anime fans can use to get information  on a certain anime!
-	</p>
-	<div class="flex flex-col sm:flex-row justify-center items-center mt-4 space-y-2 sm:space-y-0 sm:space-x-2">
-		<input class="input w-[15rem] sm:w-[15rem]" type="text" placeholder="Search..." />
-		<button type="button" class="btn variant-filled-primary w-[10rem] sm:w-auto">Submit</button>
+	<div class="flex items-center justify-center">
+		<p class="h1 inter mr-4">Mosu</p>
 	</div>
+	<p class="inline-center mt-4">Mosu, a easy-to-use economy bot!</p>
+	<div class="flex flex-col sm:flex-row justify-center items-center mt-4 space-y-2 sm:space-y-0 sm:space-x-2">
+		<div>
+			<button type="button" class="btn variant-ghost-primary w-[10rem] sm:w-auto">Support</button>
+			<button type="button" class="btn variant-ghost-primary w-[10rem] sm:w-auto">Invite</button>
+		</div>
+	</div>
+</div>
+
+<!-- Features -->
+<div class="text-center mt-[25rem]">
+	<p class="h1 inter">Features</p>
 </div>

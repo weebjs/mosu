@@ -2,8 +2,22 @@
 	import '../app.postcss';
 	import { AppShell, AppBar } from '@skeletonlabs/skeleton';
 	import { initializeStores, Modal, getModalStore } from '@skeletonlabs/skeleton';
+	import { LightSwitch } from '@skeletonlabs/skeleton';
+
 	initializeStores();
 
+	import { onNavigate } from '$app/navigation';
+
+onNavigate((navigation) => {
+	if (!document.startViewTransition) return;
+
+	return new Promise((resolve) => {
+		document.startViewTransition(async () => {
+			resolve();
+			await navigation.complete;
+		});
+	});
+});
 
 	// Highlight JS
 	import hljs from 'highlight.js/lib/core';
@@ -38,8 +52,11 @@
 		<!-- App Bar -->
 		<AppBar>
 			<svelte:fragment slot="lead">
-				<strong class="text-xl">AniVault</strong>
+				<strong class="text-xl">Mosu</strong>
 			</svelte:fragment>
+		<svelte:fragment>
+			<LightSwitch />
+		</svelte:fragment>
 		</AppBar>
 	</svelte:fragment>
 	<!-- Page Route Content -->
