@@ -8,16 +8,16 @@
 
 	import { onNavigate } from '$app/navigation';
 
-onNavigate((navigation) => {
-	if (!document.startViewTransition) return;
+	onNavigate((navigation) => {
+		if (!document.startViewTransition) return;
 
-	return new Promise((resolve) => {
-		document.startViewTransition(async () => {
-			resolve();
-			await navigation.complete;
+		return new Promise((resolve) => {
+			document.startViewTransition(async () => {
+				resolve();
+				await navigation.complete;
+			});
 		});
 	});
-});
 
 	// Highlight JS
 	import hljs from 'highlight.js/lib/core';
@@ -40,10 +40,7 @@ onNavigate((navigation) => {
 	storePopup.set({ computePosition, autoUpdate, flip, shift, offset, arrow });
 
 	const modalStore = getModalStore();
-
 </script>
-
-
 
 <Modal />
 <!-- App Shell -->
@@ -54,11 +51,21 @@ onNavigate((navigation) => {
 			<svelte:fragment slot="lead">
 				<strong class="text-xl">Mosu</strong>
 			</svelte:fragment>
-		<svelte:fragment>
-			<LightSwitch />
-		</svelte:fragment>
+			<svelte:fragment>
+				<LightSwitch />
+			</svelte:fragment>
 		</AppBar>
 	</svelte:fragment>
-	<!-- Page Route Content -->
+	<svelte:fragment slot="pageFooter">
+		<hr class="mt-2 opacity-50" />
+		<div class="footer">Page Footer</div>
+	</svelte:fragment>
 	<slot />
 </AppShell>
+
+<style>
+	.footer {
+		text-align: center;
+		padding: 40px; /* Adjust the padding as needed */
+	}
+</style>
